@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-__author__ = 'AmamiyaRen'
+__author__ = '夜雨涟'
 
 '''
 orm
@@ -21,16 +21,16 @@ async def create_pool(loop, **kw):
     #用于创建链接池
     global __pool
     __pool = await aiomysql.create_pool(
-        host=kw.get('host', 'localhost'),           #默认定义host为localhost
-        port=kw.get('port', 3306),                  #默认定义mysql的端口号为3306
-        user=kw['user'],                            #user是通过关键字参数传递进来
-        password=kw['password'],                    #password是通过关键字参数传递进来
-        db=kw['db'],                                #数据库名字
-        charset=kw.get('charset', 'utf8mb4'),       #默认数据库字符集为utf8mb4
-        autocommit=kw.get('autocommit', True),      #默认自动提交事务
-        maxsize=kw.get('maxsize', 10),              #连接池最多同时处理10个请求
-        minsize=kw.get('minsize', 1),               #链接池最少1个请求
-        loop=loop                                   #传递消息循环对象loop用于异步执行
+        host=kw.get('host', 'localhost'),       #默认定义host为localhost
+        port=kw.get('port', 3306),              #默认定义mysql的端口号为3306
+        user=kw['user'],                        #user是通过关键字参数传递进来
+        password=kw['password'],                #password是通过关键字参数传递进来
+        db=kw['db'],                            #数据库名字
+        charset=kw.get('charset', 'utf8mb4'),   #默认数据库字符集为utf8mb4
+        autocommit=kw.get('autocommit', True),  #默认自动提交事务
+        maxsize=kw.get('maxsize', 10),          #连接池最多同时处理10个请求
+        minsize=kw.get('minsize', 1),           #链接池最少1个请求
+        loop=loop                               #传递消息循环对象loop用于异步执行
     )
 
 
